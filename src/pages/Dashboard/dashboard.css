@@ -1,0 +1,30 @@
+.ant-spin-container{
+    background-color: white;
+    border-radius: 5px;
+    height: 420px;
+}
+
+.ant-table-pagination{
+   padding: 12px 0px;
+    background: white;
+}
+canvas {
+    height: 250px !important;
+}
+
+.ant-card-body  {
+    padding: unset;
+    margin: unset;
+}
+
+.ant-card-body ul {
+    margin: unset;
+    padding: unset;
+}
+
+
+.dashboard {
+    ant-card-body {
+        height: 255px !important;
+    }
+}
