@@ -10,32 +10,20 @@ import { fetchData } from '../../services/api';
 import './dashboard.css'
 
 const Dashboard = () => {
-
-  const [cardsDataAPI, setCardsDataAPI] = useState([]);
-  const [activityDataAPI, setActivityDataAPI] = useState([]);
-  const [pieChartDataAPI, setPieChartDataAPI] = useState([]);
   const [attackDataAPI, setAttackDataAPI] = useState([]);
-  const [loading, setLoading] = useState(false);
   const dashboardTitle = "Dashboard";
-
-
 
   useEffect(() => {
     const loadData = async () => {
-      setLoading(true);
       try {
         const cards = await fetchData('/logs');
         const activity = await fetchData('/logs');
         const pieChart = await fetchData('/logs');
         const attacks = await fetchData('/logs');
-        setCardsDataAPI(cards);
-        setActivityDataAPI(activity);
-        setPieChartDataAPI(pieChart);
         setAttackDataAPI(attacks);
       } catch (error) {
         console.log('error', error)
       } finally {
-        setLoading(false);
       }
     };
 
@@ -94,14 +82,6 @@ const Dashboard = () => {
     { type: '06.13.2024', value: 10 },
     { type: '06.14.2024', value: 5 },
     { type: '06.15.2024', value: 3 },
-  ];
-
-  const attackData = [
-    { id: 1, user: 'user1', ipAddress: '192.168.1.1', attackType: 'Brute Force', timestamp: '2024-06-09 10:00:00' },
-    { id: 2, user: 'user2', ipAddress: '192.168.1.2', attackType: 'SQL Injection', timestamp: '2024-06-10 12:00:00' },
-    { id: 3, user: 'user3', ipAddress: '192.168.1.3', attackType: 'Phishing', timestamp: '2024-06-11 14:00:00' },
-    { id: 4, user: 'user1', ipAddress: '192.168.1.1', attackType: 'Brute Force', timestamp: '2024-06-09 10:00:00' },
-    { id: 5, user: 'user2', ipAddress: '192.168.1.2', attackType: 'SQL Injection', timestamp: '2024-06-10 12:00:00' },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Space, Table, Pagination, Button, Tooltip, Modal } from 'antd';
+import { Space, Table, Button, Tooltip, Modal } from 'antd';
 import moment from 'moment';
 
 const UserAttackTable = ({ data, loading, onClickDetailButton }) => {
