@@ -16,9 +16,6 @@ const Dashboard = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const cards = await fetchData('/logs');
-        const activity = await fetchData('/logs');
-        const pieChart = await fetchData('/logs');
         const attacks = await fetchData('/logs');
         setAttackDataAPI(attacks);
       } catch (error) {
